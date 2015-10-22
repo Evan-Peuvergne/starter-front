@@ -1,0 +1,66 @@
+
+
+
+
+	/**
+	*
+	*	FORMS|SCSS
+	*	----------------------
+	*	DESC | Define forms modules styles
+	*	LOCATION | > modules > controls > forms.scss
+	*
+	*/
+
+
+
+
+
+
+
+	
+	/*----------  STYLES  ----------*/
+
+
+
+	// Base
+
+	.form{
+
+
+
+	}
+
+
+	// Group
+
+	.form-group{
+
+		
+
+	}
+
+
+	// Control
+
+	.form-control{
+
+		display: block;
+		width: 100%;
+
+
+		// Placeholder
+
+		&::-webkit-input-placeholder {}
+		&:-moz-placeholder {}
+		&::-moz-placeholder {}
+		&:-ms-input-placeholder {}
+
+	}
+
+	input.form-control{}
+
+	textarea.form-control{}
+
+
+
+	

@@ -1,0 +1,40 @@
+
+
+
+
+	/**
+	*
+	*	SHARED|SCSS
+	*	--------------------
+	*	DESC | Manage shared styles imports
+	*	LOCATION | > shared > shared.scss
+	*
+	*/
+
+
+
+
+
+
+	/*----------  IMPORTS  ----------*/
+
+
+
+	// Config
+
+	@import "shared/reset";
+	@import "shared/global";
+
+
+	// Partials
+
+	@import "shared/partials/header";
+	@import "shared/partials/main";
+	@import "shared/partials/footer";
+
+
+	// Layout
+
+	@import "shared/layout/grid";
+	
+	

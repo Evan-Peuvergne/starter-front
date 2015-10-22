@@ -1,0 +1,63 @@
+
+
+
+
+	/**
+	*
+	*	BUTTONS|SCSS
+	*	----------------------
+	*	DESC | Define buttons modules styles
+	*	LOCATION | > modules > controls > buttons.scss
+	*
+	*/
+
+
+
+
+
+
+
+
+
+	/*----------  VARIABLES  ----------*/
+
+
+
+	// Transition
+
+	$buttons-transition-duration: 0.2s;
+	$buttons-transition-timing-function: ease;
+	
+
+
+
+
+
+
+
+
+	/*----------  STYLES  ----------*/
+
+
+
+	// Base
+
+	.btn{
+
+		display: inline-block;
+		padding: 1em;
+		line-height: 1.38;
+		transition: background-color $buttons-transition-duration $buttons-transition-timing-function, color $buttons-transition-duration $buttons-transition-timing-function;
+
+	}
+
+
+	// Colors
+
+	.btn.btn-primary{ border-color: $color-primary; color: $color-primary; }
+	.btn.btn-primary:hover{ background-color: $color-primary; color: $color-white; }
+
+	.btn.btn-primary{ border-color: $color-second; color: $color-second; }
+	.btn.btn-primary:hover{ background-color: $color-second; color: $color-white; }
+	
+	

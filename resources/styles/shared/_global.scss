@@ -1,0 +1,45 @@
+
+
+
+
+	/**
+	*
+	*	GLOBAL|SCSS
+	* 	-------------------
+	*	DESC | Manage global shared styles definition
+	*	LOCATION | > shared > global.scss
+	*
+	*/
+
+
+
+
+
+
+
+	/*----------  STYLES  ----------*/
+
+
+
+	// Root
+
+	body{
+
+		font-family: $text-font-content;
+		font-size: $text-base-size;
+		color: $text-base-color;
+
+	}
+
+
+	// Frame
+
+	html, body{
+
+		display: block;
+		width: 100%;
+		height: 100%;
+
+	}
+	
+	
