@@ -12,10 +12,12 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "gulp-html-extend": "^1.1.6"
   },
   "devDependencies": {
-    "gulp-haml": "^0.1.6"
+    "gulp-haml": "^0.1.6",
+    "gulp-html-extend": "^1.1.6"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

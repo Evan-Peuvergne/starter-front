@@ -1,11 +1,13 @@
-
+	
 
 
 
 	/**
 	*
-	*	GULPFILE.JS
-	* 	Tasks runner definition
+	*	GULPFILE|JS
+	*	----------------------------
+	* 	DESC | Tasks runner definition
+	*	LOCATION | > gulpfile.js
 	*
 	*/
 
@@ -22,9 +24,9 @@
 	var gulp = require('gulp');
 
 
-	// Templates
+	// Html
 
-	var include = require('gulp-file-include');
+	var extend = require('gulp-html-extend');
 
 
 	// Styles
@@ -55,6 +57,14 @@
 
 
 
+
+
+
+
+
+
+
+
 	/*----------  TASKS  ----------*/
 
 
@@ -64,9 +74,13 @@
 	gulp.task('html', function ()
 	{
 
-		gulp.src('resources/templates/**/*.html')
-			.pipe(include({ prefix: '@@', basepath: 'resources/templates' }))
+		// Extend
+		gulp.src('resources/templates/pages/**/*.html')
+			.pipe(extend({ annotations:true, verbose:false }))
 			.pipe(gulp.dest('pages/'));
+
+		// Reload
+		browserSync.reload();
 
 	});
 
@@ -76,13 +90,13 @@
 	gulp.task('sass', function ()
 	{
 
+		// Sass
 		gulp.src('resources/styles/style.scss')
 			.pipe(plumber())
 			.pipe(sass())
 			.pipe(autoprefixer())
 			.pipe(gulp.dest('assets/styles/'))
 			.pipe(browserSync.stream())
-			.pipe(notify("Fichier : <%= file.relative %>"));
 
 	});
 
@@ -92,16 +106,35 @@
 	gulp.task('js', function ()
 	{
 
-		gulp.src('resources/scripts/**/*.*')
-			.pipe(plumber())
-			.pipe(concat('scripts.js'))
-			.pipe(gulp.dest('assets/js/scripts/'));
+		// Script
+		gulp.src('resources/scripts/**/*.js')
+			.pipe(concat('app.js'))
+			.pipe(gulp.dest('assets/js/scripts'));
+
+	});
+
+
+	// Compress
+
+	gulp.task('compress', function ()
+	{
+
+		// Js
+		// ...
 
 	});
 
 
 
-	
+
+
+
+
+
+
+
+
+
 
 
 	/*----------  WATCHERS  ----------*/
@@ -113,18 +146,13 @@
 	gulp.task('dev', ['sass'], function ()
 	{
 
-		// BrowserSync
-		browserSync.init([], 
-		{
-			// proxy: "127.0.0.1:8888",
-			server: { baseDir: '' },
+		// Serve
+		browserSync.init({ server: { baseDir: '' } });
 
-		});
-
-		// Watches
+		// Watchers
 		gulp.watch('resources/styles/**/*.scss', ['sass']);
-		gulp.watch('resources/templates/**/*.*', ['html']).on('change', browserSync.reload);
-		gulp.watch('resources/scripts/**/*.js', ['js']).on('change', browserSync.reload);
+		gulp.watch('resources/templates/**/*.*', ['html']);
+		gulp.watch('resources/scripts/**/*.*', ['js']);
 
 	});
 
@@ -132,7 +160,6 @@
 	// Default
 
 	gulp.task('default', ['dev']);
-	
-	
-	
-	
+
+
+
